@@ -1,0 +1,17 @@
+when making a bloom filter the function for hashing is
+
+http://blog.michaelschmatz.com/2016/04/11/how-to-write-a-bloom-filter-cpp/
+http://billmill.org/bloomfilter-tutorial/
+
+
+
+// this is called double hashing
+siphash.hash(1, 3, []byte) uint64
+split hash into 2
+
+then 
+
+where a and b are the two hash functions
+
+for i:=0; i< hashfuncs; i++
+	bucket[index] &= (a + i *b) & (mask)

@@ -1,0 +1,27 @@
+package main
+
+import (
+	"os"
+	"fmt"
+	"bufio"
+
+	"github.com/dchest/siphash"
+)
+
+func main() {
+
+	var temp []byte
+
+	if len(os.Args) > 1 {
+		temp = []byte(os.Args[1])
+	} else {
+		var err error
+		reader := bufio.NewReader(os.Stdin)
+		temp, err = reader.ReadBytes(byte('\n'))
+		if err != nil {
+			fmt.Println(err)
+		}
+	}
+
+	fmt.Println(siphash.Hash(9, 10, temp))
+}

@@ -1,0 +1,14 @@
+package main
+
+import (
+	"fmt"
+	"github.com/coolbry95/bitset"
+)
+
+func main() {
+
+	bitset.NewBitset(300)
+
+	bitset.Set()
+
+}
